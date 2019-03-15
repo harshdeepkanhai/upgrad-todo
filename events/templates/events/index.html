@@ -1,0 +1,15 @@
+{% extends 'home.html' %}
+
+
+{% block event %}
+{% if event_list %}
+    <ul class="list-group">
+    {% for event in event_list %}
+        <li class="list-group-item d-flex justify-content-around align-items-center"><a href="{% url 'events:detail' event.id %}">{{ event.title }}</a>{{event.time}}<span class="badge {{ event.is_complete|yesno:'badge-danger, badge-primary' }}">{{ event.is_complete|yesno:'COMPLETED, DUE' }}
+</span></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No events are available.</p>
+{% endif %}
+{% endblock %}
