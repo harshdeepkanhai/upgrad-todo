@@ -1,12 +1,14 @@
 from django.db import models
 from django.urls import reverse
 from django.utils import timezone
+from django.conf import settings
 
 # Create your models here.
 class Event(models.Model):
     title = models.CharField(max_length=50, help_text='Title of the event')
     time = models.DateTimeField('Time of the event', help_text='Time of the event')
     description = models.TextField('Description of the event', help_text='Description of the event', blank=True, null=True)
+    email = models.EmailField('User Email', default=None)
 
     def __str__(self):
         return self.title

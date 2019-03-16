@@ -1,6 +1,15 @@
-<h1>{{ event.title }}</h1>
-<ul>
-    <li>{{ event.time|date:'d-m-Y H:i' }}</li>
-    <li>{{ event.description }}</li>
+{% extends 'home.html' %}
+
+{% block event %}
+<h3><a href="{% url 'events:index' %}"><i class="fas fa-arrow-left"></i></a></h3>
+<h1>{{ event.title }} </h1>
+<span class="badge {{ event.is_complete|yesno:'badge-danger, badge-primary' }}">{{ event.is_complete|yesno:'COMPLETED, DUE' }}
+</span>
+<ul class="list-group">
+    <li class="list-group-item"><strong>Time:</strong> {{ event.time|date:'d-m-Y H:i' }}</li>
+    <li class="list-group-item"><strong>Description:</strong> {{ event.description }}</li>
 </ul>
+<a href="{% url 'events:edit' event.id %}" class="btn btn-info">Update</a>
+<a href="{% url 'events:delete' event.id %}" class="btn btn-danger">Delete</a>
+{% endblock %}
 
