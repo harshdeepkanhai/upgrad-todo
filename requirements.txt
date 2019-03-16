@@ -1,6 +1,9 @@
+APScheduler==3.5.3
 astroid==2.1.0
 Django==2.1.7
 django-crispy-forms==1.7.2
+django-datetimepicker==3.14
+django-tempus-dominus==5.1.2.4
 isort==4.3.4
 lazy-object-proxy==1.3.1
 mccabe==0.6.1
@@ -9,4 +12,5 @@ pylint==2.2.2
 pytz==2018.9
 six==1.12.0
 typed-ast==1.3.1
+tzlocal==1.5.1
 wrapt==1.11.1

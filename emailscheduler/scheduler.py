@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import timedelta
 from events.models import Event
 
 from apscheduler.schedulers.background import BackgroundScheduler
@@ -11,5 +11,6 @@ def start():
         subject = f"UpgradTodo EVENT REMINDER for {event.title} in 5 minutes"
         message = f"{event.title} \n ------------- \n At {event.time} \n {event.description}"
         email = [f"{event.email}"]
-        scheduler.add_job(email_api.send_notification(subject, message, email), 'date', run_date=event.time.replace(tzinfo=None), timezone=event.time.tzinfo)
+        time = event.time - timedelta(minutes=1)
+        scheduler.add_job(email_api.send_notification(subject, message, email), 'date', run_date=time)
     scheduler.start()
