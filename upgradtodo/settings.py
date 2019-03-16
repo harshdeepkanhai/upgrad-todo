@@ -131,7 +131,8 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # sendgrid
 EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_HOST_USER = 'sendgrid_username'
-EMAIL_HOST_PASSWORD = 'sendgrid_password'
+EMAIL_HOST_USER = 'developer47'
+EMAIL_HOST_PASSWORD = 'developert02'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'

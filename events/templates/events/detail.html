@@ -8,8 +8,11 @@
 <ul class="list-group">
     <li class="list-group-item"><strong>Time:</strong> {{ event.time|date:'d-m-Y H:i' }}</li>
     <li class="list-group-item"><strong>Description:</strong> {{ event.description }}</li>
+    <li class="list-group-item"><strong>Notification to:</strong> {{ event.email }}</li>
 </ul>
+{% if user.email == event.email %}
 <a href="{% url 'events:edit' event.id %}" class="btn btn-info">Update</a>
 <a href="{% url 'events:delete' event.id %}" class="btn btn-danger">Delete</a>
+{% endif %}
 {% endblock %}
 
