@@ -1,6 +1,6 @@
 APScheduler==3.5.3
 astroid==2.1.0
-Django==2.2.10
+Django==3.2.24
 django-crispy-forms==1.7.2
 django-datetimepicker==3.14
 django-tempus-dominus==5.1.2.4
